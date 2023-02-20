@@ -1,0 +1,19 @@
+<network>
+  <name>my-net</name>
+  <uuid>585e140c-9559-4812-8a3c-ff4a4f037b6e</uuid>
+  <forward mode="nat">
+    <nat>
+      <port start="1024" end="65535"/>
+    </nat>
+  </forward>
+  <bridge name="vm-net0" stp="on" delay="0"/>
+  <mac address="52:54:00:ab:dc:62"/>
+  <domain name="my-net"/>
+  <ip address="10.100.10.1" netmask="255.255.255.192">
+    <tftp root="/srv/tftp"/>
+    <dhcp>
+      <range start="10.100.10.32" end="10.100.10.62"/>
+      <bootp file="pxelinux.0" server="10.100.10.1"/>
+    </dhcp>
+  </ip>
+</network>
