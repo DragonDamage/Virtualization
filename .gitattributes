@@ -1,0 +1,3 @@
+*.bash linguist-language=Bash
+*.shell linguist-language=Shell
+*.xml linguist-language=XML
